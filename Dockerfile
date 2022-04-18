@@ -14,5 +14,7 @@ RUN git clone https://github.com/p2vvel/myisam_to_innodb.git . \
 RUN python3 -m db_converter f1db.sql \
     && mv f1db_innodb.sql /docker-entrypoint-initdb.d/
 
+ENV MYSQL_DATABASE=f1db
+
 EXPOSE 3306
 EXPOSE 33060
